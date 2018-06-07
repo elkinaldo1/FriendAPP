@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FriendAPP.View.FriendPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Nombre">
+            </Label>
+            <Entry Placeholder="Ingrese Nombre"
+                   Text="{Binding FriendModel.Nombre, Mode=TwoWay}">
+            </Entry>
+            <Label Text="Telefono">
+            </Label>
+            <Entry Placeholder="(57) 310 559 7940"
+                   Keyboard="Telephone"
+                   Text="{Binding FriendModel.Telefono, Mode=TwoWay}">
+            </Entry>
+            <Label Text="Email">
+            </Label>
+            <Entry Placeholder="Ingrese Email"
+                   Keyboard="Email"
+                   Text="{Binding FriendModel.Correo, Mode=TwoWay}">
+            </Entry>
+            <StackLayout>
+                <Button Text="Guardar"
+                        HeightRequest="50"
+                        BackgroundColor="Navy"
+                        TextColor="White"
+                        HorizontalOptions="FillAndExpand"
+                        Command="{Binding SaveCommand}">
+                </Button>
+                <Button Text="Eliminar"
+                        HeightRequest="50"
+                        BackgroundColor="OrangeRed"
+                        TextColor="White"
+                        HorizontalOptions="FillAndExpand"
+                        Command="{Binding DeleteCommand}"
+                        IsEnabled="{Binding IsEnable}">
+                </Button>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
